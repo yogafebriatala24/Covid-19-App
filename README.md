@@ -1,7 +1,6 @@
 
 # covid_19
-<img width="177" alt="covid1" src="https://user-images.githubusercontent.com/84628525/165351564-f3b32fa3-0844-4b85-8428-d96ce523345e.png">
-<img width="178" alt="Covi2" src="https://user-images.githubusercontent.com/84628525/165351538-b7420cb0-cd0c-44af-b222-32116d0b1cee.png">
+<img width="177" alt="covid1" src="https://user-images.githubusercontent.com/84628525/165351564-f3b32fa3-0844-4b85-8428-d96ce523345e.png"><img width="178" alt="Covi2" src="https://user-images.githubusercontent.com/84628525/165351538-b7420cb0-cd0c-44af-b222-32116d0b1cee.png">
 
 
 A new Flutter project.
