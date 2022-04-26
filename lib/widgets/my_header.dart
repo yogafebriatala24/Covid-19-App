@@ -1,3 +1,5 @@
+import 'package:covid_19/info_screen.dart';
+import 'package:covid_19/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,11 +10,13 @@ class MyHeader extends StatelessWidget {
   final String image;
   final String textTop;
   final String textBottom;
+  final bool isActived;
   const MyHeader({
     Key? key,
     required this.image,
     required this.textTop,
     required this.textBottom,
+    this.isActived = false,
   }) : super(key: key);
 
   @override
@@ -20,7 +24,6 @@ class MyHeader extends StatelessWidget {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        // ignore: prefer_const_constructors
         padding: EdgeInsets.only(
           left: 40,
           top: 50,
@@ -28,16 +31,13 @@ class MyHeader extends StatelessWidget {
         ),
         height: 350,
         width: double.infinity,
-        // ignore: prefer_const_constructors
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [Color(0xFF3383cd), Color(0xff11249f)],
           ),
-          // ignore: prefer_const_constructors
           image: DecorationImage(
-            // ignore: prefer_const_constructors
             image: AssetImage("assets/images/virus.png"),
           ),
         ),
@@ -46,9 +46,28 @@ class MyHeader extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topRight,
-              child: SvgPicture.asset("assets/icons/menu.svg"),
+              child: GestureDetector(
+                  onTap: () {
+                    isActived
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return InfoScreen();
+                              },
+                            ),
+                          )
+                        : Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return HomeScreen();
+                              },
+                            ),
+                          );
+                  },
+                  child: SvgPicture.asset("assets/icons/menu.svg")),
             ),
-            // ignore: prefer_const_constructors
             SizedBox(height: 20),
             Expanded(
               child: Stack(

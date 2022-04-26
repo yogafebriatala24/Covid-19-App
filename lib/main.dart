@@ -1,4 +1,5 @@
 import 'package:covid_19/constant.dart';
+import 'package:covid_19/info_screen.dart';
 import 'package:covid_19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,12 +7,10 @@ import 'package:flutter_svg/svg.dart';
 import 'widgets/counter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -24,24 +23,22 @@ class MyApp extends StatelessWidget {
           textTheme: const TextTheme(
             bodyText1: TextStyle(color: kBodyTextColor),
           )),
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          // ignore: prefer_const_constructors
           MyHeader(
             image: "assets/icons/Drcorona.svg",
             textTop: "All you need",
             textBottom: "is stay at home",
+            isActived: true,
           ),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -61,7 +58,6 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: DropdownButton(
                     isExpanded: true,
-                    // ignore: prefer_const_constructors
                     underline: SizedBox(),
                     icon: SvgPicture.asset("assets/icons/dropdown.svg"),
                     value: "Indonesia",
@@ -101,30 +97,24 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // ignore: prefer_const_constructors
                     Spacer(),
-                    // ignore: prefer_const_constructors
                     Text(
                       "Lihat detail",
-                      // ignore: prefer_const_constructors
                       style: TextStyle(
                           color: kPrimaryColor, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
-                // ignore: prefer_const_constructors
                 SizedBox(
                   height: 20,
                 ),
                 Container(
-                  // ignore: prefer_const_constructors
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                          // ignore: prefer_const_constructors
                           offset: Offset(0, 4),
                           blurRadius: 30,
                           color: kShadowColor),

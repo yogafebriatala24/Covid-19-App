@@ -18,7 +18,7 @@ class Counter extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          padding: const EdgeInsets.all(6),
+          padding: EdgeInsets.all(6),
           height: 25,
           width: 25,
           decoration: BoxDecoration(
@@ -33,18 +33,13 @@ class Counter extends StatelessWidget {
             ),
           ),
         ),
-        // ignore: prefer_const_constructors
         SizedBox(
           height: 10,
         ),
-        // ignore: prefer_const_constructors
         Text(
           "$number",
-          style:
-              // ignore: prefer_const_constructors
-              TextStyle(fontSize: 20, color: color),
+          style: TextStyle(fontSize: 20, color: color),
         ),
-        // ignore: prefer_const_constructors
         Text(
           title,
           style: kSubTextStyle,
